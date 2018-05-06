@@ -1,0 +1,6 @@
+query selectRecords {
+  description: "Select all court records"
+  statement:
+      SELECT org.blockchain.mynetwork.CourtRecord
+        WHERE (owner == _$govIdParam)
+}

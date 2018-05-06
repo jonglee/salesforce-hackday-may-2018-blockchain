@@ -1,0 +1,31 @@
+rule OrganizationCanReadEverything {
+    description: "Allow all participants read access to all resources"
+    participant: "org.blockchain.mynetwork.Organization"
+    operation: READ
+    resource: "org.blockchain.mynetwork.*"
+    action: ALLOW
+}
+
+rule JudiciaryCanSubmitTransactions {
+    description: "Allow Judiciary participants to submit transactions"
+    participant: "org.blockchain.mynetwork.Judiciary"
+    operation: ALL
+    resource: "org.blockchain.mynetwork.CourtRecord"
+    action: ALLOW
+}
+
+rule NetworkAdminUser {
+    description: "Grant business network administrators full access to user resources"
+    participant: "org.hyperledger.composer.system.NetworkAdmin"
+    operation: ALL
+    resource: "**"
+    action: ALLOW
+}
+
+rule NetworkAdminSystem {
+    description: "Grant business network administrators full access to system resources"
+    participant: "org.hyperledger.composer.system.NetworkAdmin"
+    operation: ALL
+    resource: "org.hyperledger.composer.system.**"
+    action: ALLOW
+}

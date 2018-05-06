@@ -1,0 +1,25 @@
+namespace org.blockchain.mynetwork
+
+participant Individual identified by individualId {
+  o String individualId
+  o String firstName
+  o String lastName
+  o String dob
+}
+
+participant Organization identified by organizationId {
+  o String organizationId
+  o String name
+}
+
+participant Judiciary identified by judiciaryId {
+  o String judiciaryId
+  o String name
+}
+
+asset CourtRecord identified by courtRecordId {
+  o String courtRecordId
+  --> Individual owner
+  --> Judiciary issuer
+  o String description
+}
