@@ -23,3 +23,13 @@ asset CourtRecord identified by courtRecordId {
   --> Judiciary issuer
   o String description
 }
+
+transaction PublishCourtRecord{
+  --> CourtRecord courtRecord
+}
+
+event PublishedEvent {
+  o String courtRecordId
+  o String individualId
+  o String description
+}
